@@ -1,12 +1,8 @@
 services:
 
-1. Tu Base de Datos Nativa de Render
-
 type: psql
 name: coopfamiliar-db
 plan: free
-
-2. Tu Servidor Web (que sirve la API y la interfaz React)
 
 type: web
 name: coopfamiliar-app
