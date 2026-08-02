@@ -1,18 +1,16 @@
 services:
+  - type: psql
+    name: coopfamiliar-db
+    plan: free
 
-type: psql
-name: coopfamiliar-db
-plan: free
-
-type: web
-name: coopfamiliar-app
-env: node
-plan: free
-buildCommand: npm install && npm run build
-startCommand: node server.js
-envVars:
-
-key: DATABASE_URL
-fromDatabase:
-name: coopfamiliar-db
-property: connectionString
+  - type: web
+    name: coopfamiliar-app
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node server.js
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: coopfamiliar-db
+          property: connectionString
