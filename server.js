@@ -114,8 +114,8 @@ const __dirname = path.dirname(__filename);
 // Sirve los archivos generados por Vite
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Cualquier otra ruta la maneja React
-app.get('*', (req, res) => {
+// SOLUCIÓN: Usamos app.use genérico en lugar de app.get('*') para evitar el error de sintaxis en Express 5+
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
