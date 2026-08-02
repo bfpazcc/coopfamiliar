@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "express": "^5.2.1",
     "firebase": "^12.17.0",
     "lucide-react": "^1.28.0",
+    "pg": "^8.22.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
